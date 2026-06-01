@@ -5,7 +5,9 @@ import { ScrollProgressClient } from "@/components/scroll-progress-client";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://unix29.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kotchamon-20.github.io/unix29",
+  ),
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
