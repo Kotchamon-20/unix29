@@ -562,10 +562,10 @@ export function ShowcaseDashboardAll() {
   const user = MOCK_DASHBOARD_USER;
 
   return (
-    <div className="relative mx-auto max-w-6xl">
+    <div className="relative mx-auto max-w-6xl overflow-visible px-2 sm:px-4 xl:px-8">
       <div className="absolute -inset-x-8 -inset-y-4 -z-10 rounded-3xl bg-gradient-to-b from-brand-500/10 via-fuchsia-500/5 to-transparent blur-2xl" />
 
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-card/80 shadow-2xl shadow-black/50 backdrop-blur-xl">
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-card/80 shadow-2xl shadow-black/50 backdrop-blur-xl">
         <div className="flex items-center justify-between border-b border-white/5 bg-white/[0.02] px-4 py-3">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-red-500/80 transition-transform hover:scale-110" />
@@ -647,29 +647,29 @@ export function ShowcaseDashboardAll() {
 
           <EventLegends />
         </div>
-      </div>
 
-      <RotatingDealNotification className="absolute -right-6 top-32 hidden w-64 xl:block animate-fade-up" />
+        <RotatingDealNotification className="pointer-events-none absolute right-3 top-24 z-20 hidden w-56 xl:block animate-fade-up" />
 
-      <div
-        className="absolute -left-4 bottom-24 hidden w-64 rounded-xl border border-white/10 bg-card/95 p-3 shadow-2xl shadow-black/50 backdrop-blur xl:block animate-fade-up-stagger"
-        style={{ animationDelay: "800ms" }}
-      >
-        <div className="flex items-start gap-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-fuchsia-500 text-white">
-            <Sparkles className="h-4 w-4 animate-bounce-subtle" />
-          </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-1.5 text-xs font-medium">
-              AI Copilot suggests
-              <span className="typing-dots text-brand-300">
-                <span />
-                <span />
-                <span />
-              </span>
+        <div
+          className="pointer-events-none absolute bottom-20 left-3 z-20 hidden w-56 rounded-xl border border-white/10 bg-card/95 p-3 shadow-2xl shadow-black/50 backdrop-blur xl:block animate-fade-up-stagger"
+          style={{ animationDelay: "800ms" }}
+        >
+          <div className="flex items-start gap-3">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-fuchsia-500 text-white">
+              <Sparkles className="h-4 w-4 animate-bounce-subtle" />
             </div>
-            <div className="mt-0.5 text-[11px] leading-relaxed text-muted-foreground">
-              Follow up with Michael Carter — site visit today at 10 AM
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5 text-xs font-medium">
+                AI Copilot suggests
+                <span className="typing-dots text-brand-300">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </div>
+              <div className="mt-0.5 text-[11px] leading-relaxed text-muted-foreground">
+                Follow up with Michael Carter — site visit today at 10 AM
+              </div>
             </div>
           </div>
         </div>

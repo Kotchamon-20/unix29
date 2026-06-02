@@ -6,9 +6,11 @@ import { routes } from "@/lib/navigation";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-24">
-      <AmbientBackground variant="hero" />
-      <div className="dot-pattern mask-fade-bottom absolute inset-0 -z-10 opacity-40" />
+    <section className="relative pt-32 pb-24">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <AmbientBackground variant="hero" />
+        <div className="dot-pattern mask-fade-bottom absolute inset-0 -z-10 opacity-40" />
+      </div>
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-4xl text-center">
@@ -82,7 +84,7 @@ export function Hero() {
         </div>
 
         <div
-          className="relative mt-20 animate-fade-up-stagger"
+          className="relative mt-20 overflow-visible animate-fade-up-stagger"
           style={{ animationDelay: "700ms" }}
         >
           <div className="absolute -inset-x-20 -top-10 -bottom-10 -z-10 bg-radial-glow blur-3xl" />
