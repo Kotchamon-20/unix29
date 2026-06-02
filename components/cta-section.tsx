@@ -23,7 +23,7 @@ export function CtaSection() {
             <span className="text-gradient-animated">starts here</span>
           </h2>
           <p className="relative mx-auto mt-5 max-w-lg text-balance text-base text-muted-foreground">
-            Access the full Unix29 Apps Portal — CRM, AI, automation,
+            Access the full Klaus Way Apps Portal — CRM, AI, automation,
             developer tools, and finance in one connected ecosystem.
           </p>
 

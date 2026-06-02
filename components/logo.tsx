@@ -2,26 +2,30 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  size?: number;
+  /** Logo height in pixels */
+  height?: number;
   className?: string;
   showText?: boolean;
   textClassName?: string;
 };
 
 export function Logo({
-  size = 36,
+  height = 40,
   className,
-  showText = true,
+  showText = false,
   textClassName,
 }: LogoProps) {
+  const width = Math.round(height * 3.6);
+
   return (
     <span className={cn("inline-flex items-center gap-2", className)}>
       <Image
-        src="/logo.png"
-        alt="Unix29 logo"
-        width={size}
-        height={size}
-        className="shrink-0 rounded-[22%]"
+        src="/Logo.jpg"
+        alt="The Klaus Way logo"
+        width={width}
+        height={height}
+        className="h-auto w-auto max-h-10 rounded-lg object-contain object-left sm:max-h-11"
+        style={{ maxHeight: height, width: "auto" }}
         priority
       />
       {showText && (
@@ -31,7 +35,7 @@ export function Logo({
             textClassName ?? "text-lg",
           )}
         >
-          Unix29
+          Klaus Way
         </span>
       )}
     </span>

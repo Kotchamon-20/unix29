@@ -40,7 +40,7 @@ export function Features() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
-            Unix29 Apps Portal Ecosystem
+            Klaus Way Apps Portal Ecosystem
           </div>
           <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             One portal,{" "}

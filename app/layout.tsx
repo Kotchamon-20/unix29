@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollProgressClient } from "@/components/scroll-progress-client";
+import { brand } from "@/lib/brand";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,18 +10,17 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://kotchamon-20.github.io/unix29",
   ),
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: "/Logo.jpg",
+    apple: "/Logo.jpg",
   },
   title: {
-    default:
-      "Unix29 Apps Portal — Modern Business Operations & Automation Ecosystem",
-    template: "%s · Unix29 Apps Portal",
+    default: `${brand.portal} — Modern Business Operations & Automation Ecosystem`,
+    template: `%s · ${brand.portal}`,
   },
   description:
     "The central gateway for modern business operations, automation, and seamless workflows. Klaus Connect CRM, AI voice, n8n automation, FileMaker tools, and more — unified in one portal.",
   keywords: [
-    "Unix29",
+    "Klaus Way",
     "Klaus Connect",
     "CRM",
     "business automation",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "workflow automation",
   ],
   openGraph: {
-    title: "Unix29 Apps Portal — Your Central Business Gateway",
+    title: `${brand.portal} — Your Central Business Gateway`,
     description:
       "Universal CRM, AI & automation, developer tools, and finance — all connected in one ecosystem.",
     locale: "en_US",

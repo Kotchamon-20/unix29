@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Portal Access & Pricing",
   description:
-    "Modular Unix29 portal plans — Core, Automation, and Enterprise. Single sign-on across all 9 apps.",
+    "Modular Klaus Way portal plans — Core, Automation, and Enterprise. Single sign-on across all 9 apps.",
 };
 
 export default function PricingPage() {
@@ -20,7 +20,7 @@ export default function PricingPage() {
             <span className="text-gradient-animated">how you work</span>
           </>
         }
-        description="Stop paying for disconnected tools. Access the full Unix29 ecosystem with modular plans — add only the apps your business needs."
+        description="Stop paying for disconnected tools. Access the full Klaus Way ecosystem with modular plans — add only the apps your business needs."
       />
       <PricingCompare hideHeader />
       <CtaSection />

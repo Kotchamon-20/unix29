@@ -30,7 +30,7 @@ export function ProductsShowcase() {
           </div>
           <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Explore the{" "}
-            <span className="text-gradient-animated">Unix29 ecosystem</span>
+            <span className="text-gradient-animated">Klaus Way ecosystem</span>
           </h2>
           <p className="mt-5 text-balance text-lg text-muted-foreground">
             Click any app to view full details — CRM, AI voice, automation,

@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Link href={routes.home} className="inline-flex">
-              <Logo size={36} />
+              <Logo height={36} />
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               The central gateway for modern business operations, automation,
@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-8 md:flex-row md:items-center">
           <div className="text-xs text-muted-foreground">
-            © 2026 Unix29 · Apps Portal Ecosystem
+            © 2026 Klaus Way · Apps Portal Ecosystem
           </div>
           <div className="flex items-center gap-5 text-xs text-muted-foreground">
             <a href="#" className="hover:text-foreground">

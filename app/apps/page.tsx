@@ -6,14 +6,14 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Apps & Pillars",
   description:
-    "Explore all 9 Unix29 portal apps across four pillars — CRM, AI automation, developer tools, and finance.",
+    "Explore all 9 Klaus Way portal apps across four pillars — CRM, AI automation, developer tools, and finance.",
 };
 
 export default function AppsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Unix29 Apps Portal Ecosystem"
+        eyebrow="Klaus Way Apps Portal Ecosystem"
         title={
           <>
             Nine apps,{" "}

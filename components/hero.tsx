@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles, CircleCheck } from "lucide-react";
-import { CrmDashboardPreview } from "./crm-dashboard-preview";
+import { ShowcaseDashboardAll } from "./showcase-dashboard-all";
 import { AmbientBackground } from "./animation/ambient-background";
 import { routes } from "@/lib/navigation";
 
@@ -20,7 +20,7 @@ export function Hero() {
               <span className="absolute inset-0 rounded-full bg-lime-400/70 animate-ping-soft" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-lime-400 shadow-[0_0_8px_rgba(163,230,53,0.8)]" />
             </span>
-            Unix29 Apps Portal — one gateway for your entire business stack
+            Klaus Way Apps Portal — one gateway for your entire business stack
             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
           </Link>
 
@@ -86,7 +86,7 @@ export function Hero() {
           style={{ animationDelay: "700ms" }}
         >
           <div className="absolute -inset-x-20 -top-10 -bottom-10 -z-10 bg-radial-glow blur-3xl" />
-          <CrmDashboardPreview />
+          <ShowcaseDashboardAll />
         </div>
 
         <ProductGridLinks />

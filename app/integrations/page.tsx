@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Integrations",
   description:
-    "Connect Klaus Connect, n8n, VAPI, QuickBooks, FileMaker, and 16+ services through the Unix29 portal.",
+    "Connect Klaus Connect, n8n, VAPI, QuickBooks, FileMaker, and 16+ services through the Klaus Way portal.",
 };
 
 export default function IntegrationsPage() {

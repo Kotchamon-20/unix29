@@ -77,7 +77,7 @@ export function CrmDashboardPreview() {
               <span className="absolute inset-0 rounded-full bg-lime-400/60 animate-ping-soft" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-lime-400" />
             </span>
-            app.unix29.com/portal
+            app.klausway.com/portal
           </div>
           <div className="w-12" />
         </div>
@@ -85,7 +85,7 @@ export function CrmDashboardPreview() {
         <div className="flex">
           <aside className="hidden w-56 shrink-0 border-r border-white/5 bg-background/40 p-4 lg:block">
             <div className="mb-6 px-2">
-              <Logo size={28} textClassName="text-sm" />
+              <Logo height={28} textClassName="text-sm" />
             </div>
             <nav className="space-y-0.5">
               {[

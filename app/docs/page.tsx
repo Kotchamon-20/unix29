@@ -16,7 +16,7 @@ import { routes } from "@/lib/navigation";
 export const metadata: Metadata = {
   title: "Documentation & Resources",
   description:
-    "Unix29 portal documentation, API reference, n8n workflow templates, system status, and contact.",
+    "Klaus Way portal documentation, API reference, n8n workflow templates, system status, and contact.",
 };
 
 const sections = [
@@ -25,7 +25,7 @@ const sections = [
     icon: BookOpen,
     title: "Documentation",
     description:
-      "Guides for Klaus Connect, Customer Portal, n8n Console, and every app in the Unix29 ecosystem.",
+      "Guides for Klaus Connect, Customer Portal, n8n Console, and every app in the Klaus Way ecosystem.",
     links: [
       "Getting started with the portal",
       "Klaus Connect CRM setup",
@@ -77,7 +77,7 @@ const sections = [
     icon: Mail,
     title: "Contact & Support",
     description:
-      "Request portal access, enterprise pricing, or technical support from the Unix29 team.",
+      "Request portal access, enterprise pricing, or technical support from the Klaus Way team.",
     links: [
       "Request portal access",
       "Enterprise sales",
@@ -98,7 +98,7 @@ export default function DocsPage() {
             <span className="text-gradient-animated">support</span>
           </>
         }
-        description="Everything you need to deploy, integrate, and scale on the Unix29 Apps Portal."
+        description="Everything you need to deploy, integrate, and scale on the Klaus Way Apps Portal."
       />
 
       <section className="relative pb-24">

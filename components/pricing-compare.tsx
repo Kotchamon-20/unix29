@@ -17,7 +17,7 @@ export function PricingCompare({ hideHeader = false }: { hideHeader?: boolean })
               <span className="text-gradient-animated">built for how you work</span>
             </h2>
             <p className="mt-5 text-balance text-lg text-muted-foreground">
-              Stop paying for disconnected tools. Access the full Unix29 ecosystem
+              Stop paying for disconnected tools. Access the full Klaus Way ecosystem
               <br />
               with modular plans — add only the apps your business needs.
             </p>
@@ -60,7 +60,7 @@ export function PricingCompare({ hideHeader = false }: { hideHeader?: boolean })
               <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-400 to-transparent" />
               <div className="flex items-center justify-between">
                 <div className="rounded-lg bg-lime-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-lime-400">
-                  Unix29 Portal
+                  Klaus Way Portal
                 </div>
                 <div className="inline-flex items-center gap-1 rounded-full bg-lime-500/10 px-2 py-0.5 text-[10px] font-semibold text-lime-400">
                   <TrendingDown className="h-3 w-3" />

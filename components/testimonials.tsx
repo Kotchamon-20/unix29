@@ -66,11 +66,11 @@ export function Testimonials() {
           <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Teams run smarter
             <br />
-            <span className="text-gradient-animated">on the Unix29 Portal</span>
+            <span className="text-gradient-animated">on the Klaus Way Portal</span>
           </h2>
           <p className="mt-5 text-balance text-lg text-muted-foreground">
             From construction and field services to insurance and finance —
-            businesses of every size rely on the Unix29 ecosystem.
+            businesses of every size rely on the Klaus Way ecosystem.
           </p>
         </Reveal>
 
