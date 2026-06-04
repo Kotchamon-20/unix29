@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Lock, ShieldCheck } from "lucide-react";
 import { AdminButton, AdminField } from "@/components/admin/admin-ui";
+import { apiUrl } from "@/lib/api-path";
 
 type AdminUser = {
   name: string;
@@ -25,7 +26,7 @@ export function AdminAuthPanel({ onAuthenticated }: AdminAuthPanelProps) {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/admin/auth", {
+      const response = await fetch(apiUrl("/api/admin/auth"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

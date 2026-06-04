@@ -31,6 +31,7 @@ import {
 import { ImageFields } from "@/components/admin/image-fields";
 import { RichTextEditor } from "@/components/admin/rich-text-editor";
 import { portfolioCategories } from "@/lib/portfolio";
+import { apiUrl } from "@/lib/api-path";
 import {
   AdminButton,
   AdminField,
@@ -131,7 +132,7 @@ export function CmsDashboard() {
   }, []);
 
   useEffect(() => {
-    void fetch("/api/admin/setup")
+    void fetch(apiUrl("/api/admin/setup"))
       .then(async (res) => {
         if (!res.ok) return;
         const data = (await res.json()) as { needsBootstrap?: boolean };
@@ -146,7 +147,7 @@ export function CmsDashboard() {
   };
 
   const loadUsers = useCallback(async (authToken: string) => {
-    const res = await fetch("/api/admin/users", { headers: authHeaders(authToken) });
+    const res = await fetch(apiUrl("/api/admin/users"), { headers: authHeaders(authToken) });
     if (!res.ok) return;
     const users = (await res.json()) as AdminUserRecord[];
     setAdminUsers(users.map((u) => ({ ...u, createdAt: u.createdAt.slice(0, 10) })));
@@ -156,8 +157,8 @@ export function CmsDashboard() {
     setLoading(true);
     try {
       const [blogRes, portfolioRes] = await Promise.all([
-        fetch("/api/admin/blog", { headers: authHeaders(authToken) }),
-        fetch("/api/admin/portfolio", { headers: authHeaders(authToken) }),
+        fetch(apiUrl("/api/admin/blog"), { headers: authHeaders(authToken) }),
+        fetch(apiUrl("/api/admin/portfolio"), { headers: authHeaders(authToken) }),
       ]);
       if (blogRes.status === 401 || portfolioRes.status === 401) {
         sessionStorage.clear();
@@ -218,7 +219,7 @@ export function CmsDashboard() {
 
   async function bootstrapFirstAdmin(e: React.FormEvent) {
     e.preventDefault();
-    const res = await fetch("/api/admin/users", {
+    const res = await fetch(apiUrl("/api/admin/users"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: newUserName, email: newUserEmail, password: newUserPassword }),
@@ -236,7 +237,7 @@ export function CmsDashboard() {
   async function createAdminUser(e: React.FormEvent) {
     e.preventDefault();
     if (!token) return;
-    const res = await fetch("/api/admin/users", {
+    const res = await fetch(apiUrl("/api/admin/users"), {
       method: "POST",
       headers: authHeaders(token),
       body: JSON.stringify({ name: newUserName, email: newUserEmail, password: newUserPassword }),
@@ -252,7 +253,9 @@ export function CmsDashboard() {
     e.preventDefault();
     if (!token || !editingBlog?.slug || !editingBlog.title || !editingBlog.excerpt) return;
     const isNew = !editingBlog.originalSlug;
-    const res = await fetch(isNew ? "/api/admin/blog" : `/api/admin/blog/${editingBlog.originalSlug}`, {
+    const res = await fetch(
+      isNew ? apiUrl("/api/admin/blog") : apiUrl(`/api/admin/blog/${editingBlog.originalSlug}`),
+      {
       method: isNew ? "POST" : "PUT",
       headers: authHeaders(token),
       body: JSON.stringify({
@@ -272,7 +275,7 @@ export function CmsDashboard() {
 
   async function deleteBlog(slug: string) {
     if (!token || !confirm(`Delete blog post "${slug}"?`)) return;
-    const res = await fetch(`/api/admin/blog/${slug}`, { method: "DELETE", headers: authHeaders(token) });
+    const res = await fetch(apiUrl(`/api/admin/blog/${slug}`), { method: "DELETE", headers: authHeaders(token) });
     if (!res.ok) { notify("Failed to delete.", "error"); return; }
     if (editingBlog?.slug === slug) setEditingBlog(null);
     notify("Blog post deleted.");
@@ -283,7 +286,9 @@ export function CmsDashboard() {
     e.preventDefault();
     if (!token || !editingPortfolio?.slug || !editingPortfolio.title || !editingPortfolio.description || !editingPortfolio.overview) return;
     const isNew = !editingPortfolio.originalSlug;
-    const res = await fetch(isNew ? "/api/admin/portfolio" : `/api/admin/portfolio/${editingPortfolio.originalSlug}`, {
+    const res = await fetch(
+      isNew ? apiUrl("/api/admin/portfolio") : apiUrl(`/api/admin/portfolio/${editingPortfolio.originalSlug}`),
+      {
       method: isNew ? "POST" : "PUT",
       headers: authHeaders(token),
       body: JSON.stringify(editingPortfolio),
@@ -296,7 +301,7 @@ export function CmsDashboard() {
 
   async function deletePortfolio(slug: string) {
     if (!token || !confirm(`Delete portfolio project "${slug}"?`)) return;
-    const res = await fetch(`/api/admin/portfolio/${slug}`, { method: "DELETE", headers: authHeaders(token) });
+    const res = await fetch(apiUrl(`/api/admin/portfolio/${slug}`), { method: "DELETE", headers: authHeaders(token) });
     if (!res.ok) { notify("Failed to delete.", "error"); return; }
     if (editingPortfolio?.slug === slug) setEditingPortfolio(null);
     notify("Portfolio project deleted.");

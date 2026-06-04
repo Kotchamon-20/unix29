@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Reveal } from "./animation/reveal";
+import { apiUrl } from "@/lib/api-path";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +18,7 @@ export function ContactForm() {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(apiUrl("/api/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

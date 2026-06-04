@@ -3,6 +3,7 @@
 import { useRef, useState, type DragEvent, type ReactNode } from "react";
 import { ImageIcon, Images, Loader2, RefreshCw, Trash2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { apiUrl } from "@/lib/api-path";
 
 type ImageFieldsProps = {
   token: string;
@@ -24,7 +25,7 @@ async function uploadImage(
   formData.append("file", file);
   formData.append("folder", folder);
 
-  const response = await fetch("/api/admin/upload", {
+  const response = await fetch(apiUrl("/api/admin/upload"), {
     method: "POST",
     headers: { Authorization: `Bearer ${token}` },
     body: formData,
